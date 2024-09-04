@@ -1,0 +1,115 @@
+                              DATASET ANALYSIS
+                     UNCOVERING HIDDEN INSIGHTS IN CAR DATA.
+
+
+
+
+ENTRODUCTION
+-------------
+This data set contains information about cars, including their brand, model, fuel type,
+price, mileage, and other features.
+The goal of this analysis is to uncover insights and patterns in the data to 
+help optimize car sales and customer satisfaction.
+
+DATA OVERVIEW
+---------------
+- Column Name: Data Type
+- Brand: varchar
+- Model: varchar
+- Fuel Type: varchar
+- Price: int
+- Mileage: int
+- Features: varchar
+- Color: varchar
+- Transmission: varchar
+- Engine Size: int
+- Horsepower: int
+- Fuel Economy: int
+
+DATA ANALYSIS
+---------------
+1. Total Number of Cars:   The total number of cars-7927 (currently available).
+
+2. Most Popular Car Brand: The most popular car brand is Toyota, with 452 cars.
+
+3. Most Popular Fuel Type: The most popular fuel type is diesel, with 4304 cars.
+
+4. lowest price:           lowest prised car is maruti 800 ac, with one car.(limitted stock)
+                           price of maruti 800 ac-29999
+
+5. Most Common Feature:    The most common feature is Bluetooth Connectivity, with 7927 cars.
+
+6. Transmission Types:     The most common transmission type is Automatic, with 1041 cars.
+   transmission types:     number of mannual cars are available-6866
+
+7. Engine (cc)(max):       total number of maximum cc cars are available:6
+                           maximum cc car's name:jeep wrangler 2016-2019 3.6 4*4 3604 cc
+
+8. Engine (cc)(min):       total number of minimum cc cars are available:25
+                           minimum cc cars name: tata nano 624 cc
+                       
+9. fuel types:             total number of petrol cars:3544
+                           total number of diesel cars:4304
+                           total number of cng cars:25
+
+10. Model:                 latest manufacture year car is : 2023
+                           total number of cars:6
+                     
+11. latest models:         Maruti Alto 800 LXI Opt
+                           Skoda Slavia 1.0 TSI Ambition
+                           BMW 3 Series Gran Limousine 320Ld Luxury Line
+                           MG ZS EV Exclusive
+                           Tata Punch Adventure
+                           Maruti S-Presso VXi Plus
+
+12. model:                 lowest manufacture year car is: 1994
+                           total numbers of cars:2
+
+13. Lowest model:          Ambassador Classic 2000 DSZ AC PS
+                           Maruti 800 AC
+
+14. lowest priced car:     maruti 800 ac
+                           price is: 29999    
+
+15. lexury car:            volvo xc90 t8 excellence bsiv
+
+16. features of lexury car:year of manufacturing-2017
+                           selling price-        10000000
+                           km_driven-            30000
+                           fuel-                 petrol
+                           transmission-         automatic
+                           owner-                first
+                           mileage-              42.0 kmpl
+                           max_power-            400
+                           torque-               640
+                           seats-                4
+                           currently availeble-  1
+
+QUSTIONS
+----------
+1. finding total number of cars.
+   SELECT COUNT(*) AS total_cars FROM table_name;
+
+2. finding total number of most popular car brand.
+   select count(*) from table_name where column_name like"raw_name"
+
+3. find the lowest price car.
+   SELECT *, COUNT(*) as count 
+   FROM table_name 
+   WHERE column_name = (SELECT MIN(column_name) FROM table_name)
+   GROUP BY s_no;
+
+4. find the total number of transmission automatic and mannual
+   select count(*) from table_name where column_name="manual";
+   select count(*) from table_name where column_name="automatic";
+
+6. find the minimum cc car.
+   SELECT * FROM cars_world 
+   WHERE engine = (SELECT MIN(engine) FROM cars_world);
+   
+
+CONCLUSION
+-----------
+This analysis provides insights into the car_dekho dataset, including the most popular brand,
+ fuel type, features, and other patterns. These findings can help optimize car sales and customer 
+satisfaction by identifying trends and preferences in the data.
